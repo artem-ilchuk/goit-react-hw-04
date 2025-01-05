@@ -1,22 +1,36 @@
+import s from "./SearchBar.module.css";
 import { useState } from "react";
+import { FcSearch } from "react-icons/fc";
+import { toast } from "react-hot-toast";
 
 const SearchBar = ({ onSearchChanged }) => {
   const [value, setValue] = useState("");
-  const handleSubmit = (e) => e.preventDeafault();
-  onSearchChanged(value);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (value.trim() === "") {
+      toast.error("Plese fill in the search images and photoes field.");
+      return;
+    }
+    onSearchChanged(value);
+  };
+
   return (
     <header>
-      <div>
-        <form onSubmit={handleSubmit}>
-          <input
-            onChange={(e) => setValue(e.target.value)}
-            value={value}
-            type="text"
-            autoComplete="off"
-            autoFocus
-            placeholder="Search images and photos"
-          />
-          <button type="submit">Search</button>
+      <div className={s.bar}>
+        <form onSubmit={handleSubmit} className={s.form}>
+          <div className={s.inputWrapper}>
+            <input
+              className={s.input}
+              onChange={(e) => setValue(e.target.value)}
+              value={value}
+              type="text"
+              autoComplete="off"
+              autoFocus
+              placeholder="Search images and photos"
+            />
+            <FcSearch className={s.search} size={32} onClick={handleSubmit} />
+          </div>
         </form>
       </div>
     </header>
@@ -24,7 +38,3 @@ const SearchBar = ({ onSearchChanged }) => {
 };
 
 export default SearchBar;
-
-<form>
-  <input type="text" />
-</form>;
