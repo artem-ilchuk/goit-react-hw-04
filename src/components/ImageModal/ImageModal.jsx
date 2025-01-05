@@ -25,10 +25,12 @@ const ImageModal = ({ image, isOpen, onRequestClose }) => {
           className={s.image}
         />
         <div className={s.authorInfo}>
-          <p className={s.text}>
-            <LuSquareUserRound size={22} /> <strong>Author:</strong>{" "}
-            {image.user.name}
-          </p>
+          <div className={s.author}>
+            <LuSquareUserRound size={22} />
+            <p className={s.text}>
+              <strong>Author:</strong> {image.user.name}
+            </p>
+          </div>
           {image.user.social.instagram_username && (
             <a
               href={instagramUrl}

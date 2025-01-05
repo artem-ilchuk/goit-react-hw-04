@@ -25,9 +25,12 @@
 
 .image {
   max-width: 100%;
+  max-height: 75vh;
   height: auto;
   border-radius: 4px;
   display: block;
+  object-fit: contain;
+  margin: 0 auto;
 }
 
 .closeButton {
@@ -47,46 +50,48 @@
   justify-content: center;
   transition: background-color 0.3s;
   z-index: 10;
+}
 
-  &:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-  }
+.closeButton:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .authorInfo {
   position: absolute;
-  bottom: 10px;
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: rgba(255, 255, 255, 0.7);
-  border-radius: 4px;
-  padding: 5px 15px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
   font-size: 14px;
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 10px;
-  justify-content: center;
-  width: auto;
   z-index: 10;
 }
 
-.authorInfo p {
-  margin: 0;
+.authorInfo:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.author {
   display: flex;
+  flex-direction: row;
   align-items: center;
   gap: 5px;
 }
 
 .instagramLink {
-  color: #0073b1;
-  font-size: 14px;
+  color: #f5a623;
   text-decoration: none;
   display: flex;
-  align-items: center;
   gap: 5px;
-  transition: color 0.3s;
+  align-items: center;
 }
 
 .instagramLink:hover {
-  color: #005f8e;
+  color: #e95950;
 }
