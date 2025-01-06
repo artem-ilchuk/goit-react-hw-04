@@ -10,8 +10,13 @@ const ImageCard = ({
   onClick,
 }) => {
   return (
-    <div className={s.gallery_item} onClick={onClick}>
-      <img className={s.gallery_image} src={photo} alt={alt} />
+    <div className={s.gallery_item}>
+      <img
+        className={s.gallery_image}
+        src={photo}
+        alt={alt}
+        onClick={onClick}
+      />
       <div className={s.description}>
         <ul className={s.list}>
           <li className={s.item}>
